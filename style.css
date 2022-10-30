@@ -1,0 +1,47 @@
+body{
+    /* background-color: rgb(212, 218, 219);  */
+    background-size: cover;   
+    font-family: 'Lucida Sans', Arial, sans-serif;
+    background-image: url(./img/cinza.jpg); 
+    background-repeat: no-repeat;
+    
+}
+
+.backend{
+    width: 400%;
+    height: 100%;
+    background-image: url(./img/background-site.jpg);    
+    
+}
+
+.carousel-item img {
+    padding: 15px;
+    max-height: 600px;
+  }
+
+  #second-corousel img {    
+    max-height: 400px;
+  }
+
+  .colecao{
+    padding-top: 100px;
+    color: rgb(143, 142, 142);
+  }
+
+  .logo{    
+    padding: 50px 0px 5px 0px;    
+  }
+  /* .logo img{
+    max-width: 1000%;
+    max-height: 1000%;
+  } */
+
+  footer{
+    padding: 30px;    
+  }
+
+  footer img{
+    width: 50px;
+    height: 50px;
+    padding: 4px;    
+  }

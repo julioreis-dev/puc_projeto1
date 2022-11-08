@@ -38,8 +38,12 @@ body{
 
   .produto-item{
     width: 250px;
-    padding: 10px 50px;
+    padding: 0px 30px;
     float: left;
+  }
+
+  #lista-produtos{
+    font-size: 20px;
   }
    
   footer{
@@ -52,4 +56,3 @@ body{
     height: 50px;
     padding: 4px;    
   }
-  

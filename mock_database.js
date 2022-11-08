@@ -54,5 +54,24 @@ var db = {
             precoprod: 82.28,
             descricao: 'Bolsa de 20 litros'
         },
+        {
+            nome:'Manuela',
+            sobrenome: 'firmino',
+            email: 'manu@gmail.com',
+            nomeprod: 'bolsa de bebe',
+            image: 'http://lorempixel.com.br/200/120/food/6',
+            precoprod: 82.28,
+            descricao: 'Bolsa de 20 litros'
+        },
+        {
+            nome:'Manuela',
+            sobrenome: 'firmino',
+            email: 'manu@gmail.com',
+            nomeprod: 'bolsa de bebe',
+            image: 'http://lorempixel.com.br/200/120/food/6',
+            precoprod: 82.28,
+            descricao: 'Bolsa de 20 litros'
+        },
+        
     ]
 }

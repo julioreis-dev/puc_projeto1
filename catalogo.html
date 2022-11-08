@@ -71,55 +71,15 @@
           R$ 13,99
         </h4>
       </div>
-
-      <div class="col-sm-3 p-5">
-        <img src="./img/blusa_4.png" alt="logo">
-        <h4>
-          SOU UM PRODUTO
-        </h4>
-        <h4>
-          R$ 10,99
-        </h4>
-      </div>
-
-      <div class="col-sm-3 p-5">
-        <img src="./img/blusa_1.png" alt="logo">
-        <h4>
-          SOU UM PRODUTO
-        </h4>
-        <h4>
-          R$ 11,99
-        </h4>
-      </div>
-
-      <div class="col-sm-3 p-5">
-        <img src="./img/blusa_2.png" alt="logo">
-        <h4>
-          SOU UM PRODUTO
-        </h4>
-        <h4>
-          R$ 12,99
-        </h4>
-      </div>
-
-      <div class="col-sm-3 p-5">
-        <img src="./img/blusa_3.png" alt="logo">
-        <h4>
-          SOU UM PRODUTO
-        </h4>
-        <h4>
-          R$ 13,99
-        </h4>
-      </div>        
-    </div>       
-  </div>
+    </div>
+  </div>   
 
   <div class="container">
     <div class="row p-4 justify-content-center">
       <h1>Produtos</h1>
     </div>
     <div class="row d-flex justify-content-center">
-      <div id="col-sm-3 p-5 lista-produtos">
+      <div id="lista-produtos">
         
       </div>
     </div>
@@ -173,7 +133,7 @@
       prods += `<p class="produto-item"><img src="${db.dados[i].image}"><br>${db.dados[i].nomeprod}<br>R$ ${(db.dados[i].precoprod).toFixed(2)}</p>`;                
     }
     console.log(prods)
-    document.getElementById('col-sm-3 p-5 lista-produtos').innerHTML = prods;
+    document.getElementById('lista-produtos').innerHTML = prods;
   </script>
   
   

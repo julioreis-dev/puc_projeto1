@@ -37,12 +37,11 @@ body{
   } */
 
   .produto-item{
-    width: 220px;
-    padding: 0 10px;
+    width: 250px;
+    padding: 10px 50px;
     float: left;
   }
-
-  
+   
   footer{
     clear: both;
     padding: 30px;    
@@ -53,3 +52,4 @@ body{
     height: 50px;
     padding: 4px;    
   }
+  

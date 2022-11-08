@@ -36,7 +36,15 @@ body{
     max-height: 1000%;
   } */
 
+  .produto-item{
+    width: 220px;
+    padding: 0 10px;
+    float: left;
+  }
+
+  
   footer{
+    clear: both;
     padding: 30px;    
   }
 

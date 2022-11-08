@@ -110,13 +110,21 @@
         <h4>
           R$ 13,99
         </h4>
-      </div>
-      <h1>Produtos</h1>      
-      <div id="lista-produtos">
-
-      </div>    
+      </div>        
     </div>       
   </div>
+
+  <div class="container">
+    <div class="row p-4 justify-content-center">
+      <h1>Produtos</h1>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div id="col-sm-3 p-5 lista-produtos">
+        
+      </div>
+    </div>
+  </div>  
+
 
   <!-- endblock content -->
 
@@ -161,10 +169,11 @@
   
   <script>
     var prods = '';
-    for (let i=0; i < db.dados.length; i++){           
-      prods += `Produto: ${db.dados[i].nomeprod} <br>`;           
+    for (let i=0; i < db.dados.length; i++){                
+      prods += `<p class="produto-item"><img src="${db.dados[i].image}"><br>${db.dados[i].nomeprod}<br>R$ ${(db.dados[i].precoprod).toFixed(2)}</p>`;                
     }
-    document.getElementById('lista-produtos').innerHTML = prods;
+    console.log(prods)
+    document.getElementById('col-sm-3 p-5 lista-produtos').innerHTML = prods;
   </script>
   
   

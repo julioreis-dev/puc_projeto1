@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="mock_database.js"></script>
+    <script src="mock.json"></script>
     <title>BabyLogo-Cadastro</title>
 </head>
 <body> 
@@ -52,11 +53,11 @@
               <label for="exampleFormControlTextarea1">Descrição do Produto:</label>
               <textarea class="form-control" id="inputDescricao" rows="7"></textarea>
             </div>
-            <div class="col-sm-12 offset-3">
+            <div class="col-sm-12 offset-4">
               <input type="button" class="btn btn-success" id="btnInsert" value="Inserir" onclick="insertdata()" />
               <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
               <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
-              <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form">
+              <!-- <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Form"> -->
             </div>           
           </form>            
     </div>
@@ -95,18 +96,59 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
       function insertdata(){            
-            if (!$("#form-contato")[0].checkValidity()){
-              let filedata = {
-                nome:'test',
-                sobrenome: 'test',
-                email: 'test@gmail.com',
-                nomeprod: 'test',
-                image: 'http://lorempixel.com.br/200/120/food/1',
-                precoprod: 150.50,
-                descricao: 'test'
+            if (!$("#form-contato")[0].checkValidity()){                
+                // const data_form = document.querySelector('#form-contato');                
+                let nome = $('#inputNome').val();
+                let sobrenome = $('#inputSobrenome').val();
+                let email = $('#inputEmail').val();
+                let nomeprod = $('#inputNomeprod').val();
+                let precoprod = $('#inputPrecoprod').val();
+                let descricao = $('#inputDescricao').val();
+                console.log(nome);
+                
+                let filedata = {
+                "nome":nome,
+                "sobrenome": sobrenome,
+                "email": email,
+                "nomeprod": nomeprod,
+                "image": "http://lorempixel.com.br/200/120/food/1",
+                "precoprod": precoprod,
+                "descricao": descricao
               }
-              db.dados.push(filedata);          
+              db.dados.push(filedata);
               console.log(db.dados);
+              $("#form-contato")[0].reset();
+
+
+
+            //   fetch('./mock.json')
+            //   .then(response => {
+            //     return response.json();
+            //   }).then(jsondata => console.log(jsondata));
+
+            //   let filedata = {
+            //     "nome":"test",
+            //     "sobrenome": "test",
+            //     "email": "test@gmail.com",
+            //     "nomeprod": "test",
+            //     "image": "http://lorempixel.com.br/200/120/food/1",
+            //     "precoprod": 150.50,
+            //     "descricao": "test"
+            //   }
+
+            //   fetch('./mock.json', { // endpoint falso de API
+            //   method: 'POST',
+            //   headers: {
+            //     'Content-Type': 'application/json',
+            //   },
+            //   body: JSON.stringify(filedata), // transforma o objeto literal em JS em uma string em JSON
+            // })
+            //   .then(res => res.json())
+            //   .then(data => console.log(data))
+            //   .catch(err => {
+            //     console.error(err);
+            //   });
+              
             }
             else{
               alert("Por favor, preencha todos os campos do formulário corretamente!!!");

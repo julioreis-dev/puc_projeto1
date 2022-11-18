@@ -116,8 +116,10 @@
                 "descricao": descricao
               }
               db.dados.push(filedata);
+              localStorage.setItem('db_contato', JSON.stringify(db));
               console.log(db.dados);
               $("#form-contato")[0].reset();
+              alert("Produto cadastrado corretamente!!!");
 
 
 

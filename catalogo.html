@@ -130,7 +130,7 @@
   <script>
     var prods = '';
     for (let i=0; i < db.dados.length; i++){                
-      prods += `<p class="produto-item"><img src="${db.dados[i].image}"><br>${db.dados[i].nomeprod}<br>R$ ${(db.dados[i].precoprod).toFixed(2)}</p>`;                
+      prods += `<p class="produto-item"><img src="${db.dados[i].image}"><br>${db.dados[i].nomeprod}<br>R$ ${(parseInt(db.dados[i].precoprod, 10)).toFixed(2)}</p>`;                
     }
     console.log(prods)
     document.getElementById('lista-produtos').innerHTML = prods;

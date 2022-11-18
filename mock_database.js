@@ -1,4 +1,4 @@
-var db = {
+var db_contatos_inicial = {
     dados: [
         {
             nome:'Juliana',
@@ -20,3 +20,8 @@ var db = {
         },       
     ]
 }
+
+var db = JSON.parse(localStorage.getItem('db_contato'));
+if (!db) {
+    db = db_contatos_inicial;
+};

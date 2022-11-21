@@ -31,7 +31,7 @@
     <div class="row p-4 justify-content-center">
       <h1>CATÁLOGO DE PRODUTOS</h1>
     </div>
-    <div class="row d-flex justify-content-center">      
+    <!-- <div class="row d-flex justify-content-center">      
       <div class="col-sm-3 p-5">
         <img src="./img/blusa_1.png" alt="logo">
         <h4>
@@ -72,14 +72,42 @@
         </h4>
       </div>
     </div>
-  </div>   
+  </div>    -->
 
   <div class="container">
     <div class="row p-4 justify-content-center">
-      <h1>Produtos</h1>
+      <!-- <h1>Produtos</h1> -->
     </div>
     <div class="row d-flex justify-content-center">
       <div id="lista-produtos">
+        <div class="row">
+          <div class="col-sm-12">
+              <table id="grid-contatos" class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Nome</th>
+                          <th scope="col">Sobrenome</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Produto</th>
+                          <th scope="col">Preço</th>
+                          <th scope="col">Descrição</th>
+                      </tr>
+                  </thead>
+                  <tbody id="table-contatos">
+                      <tr>
+                          <!-- <td scope="row">1</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td> -->
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+        </div>
         
       </div>
     </div>
@@ -129,11 +157,20 @@
   
   <script>
     var prods = '';
-    for (let i=0; i < db.dados.length; i++){                
-      prods += `<p class="produto-item"><img src="${db.dados[i].image}"><br>${db.dados[i].nomeprod}<br>R$ ${(parseInt(db.dados[i].precoprod, 10)).toFixed(2)}</p>`;                
+    for (let i=0; i < db.dados.length; i++){ 
+      let info = db.dados[i];
+      $("#table-contatos").append(`<tr><td scope="row">${info.id}</td>
+                                                <td>${info.nome}</td>
+                                                <td>${info.sobrenome}</td>
+                                                <td>${info.email}</td>
+                                                <td>${info.nomeprod}</td>
+                                                <td>${info.precoprod}</td>
+                                                <td>${info.descricao}</td>
+                                            </tr>`);               
+      // prods += `<p class="produto-item"><img src="${db.dados[i].image}"><br>${db.dados[i].nomeprod}<br>R$ ${(parseInt(db.dados[i].precoprod, 10)).toFixed(2)}</p>`;                
     }
-    console.log(prods)
-    document.getElementById('lista-produtos').innerHTML = prods;
+    // console.log(prods)
+    // document.getElementById('#table-contatos').innerHTML = prods;
   </script>
   
   

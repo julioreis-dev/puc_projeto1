@@ -59,4 +59,9 @@ body{
 
   #table-contatos{
     font-size: 18px;
+    cursor: pointer;
   }
+
+  /* #grid-contatos{
+    cursor: pointer;
+  } */

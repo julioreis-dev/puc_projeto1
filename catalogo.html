@@ -82,7 +82,7 @@
       <div id="lista-produtos">
         <div class="row">
           <div class="col-sm-12">
-              <table id="grid-contatos" class="table table-striped">
+              <table id="grid-contatos" class="table table-hover">
                   <thead>
                       <tr>
                           <th scope="col">ID</th>
@@ -164,7 +164,7 @@
                                                 <td>${info.sobrenome}</td>
                                                 <td>${info.email}</td>
                                                 <td>${info.nomeprod}</td>
-                                                <td>${info.precoprod}</td>
+                                                <td>R$ ${info.precoprod}</td>
                                                 <td>${info.descricao}</td>
                                             </tr>`);               
       // prods += `<p class="produto-item"><img src="${db.dados[i].image}"><br>${db.dados[i].nomeprod}<br>R$ ${(parseInt(db.dados[i].precoprod, 10)).toFixed(2)}</p>`;                

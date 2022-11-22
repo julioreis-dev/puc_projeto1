@@ -78,7 +78,7 @@
                           <th scope="col">Sobrenome</th>
                           <th scope="col">Email</th>
                           <th scope="col">Produto</th>
-                          <th scope="col">Preço</th>
+                          <th scope="col">Preço (R$)</th>
                           <th scope="col">Descrição</th>
                       </tr>
                   </thead>
@@ -182,16 +182,18 @@
                                     <td>${info.sobrenome}</td>
                                     <td>${info.email}</td>
                                     <td>${info.nomeprod}</td>
-                                    <td>R$ ${info.precoprod}</td>
+                                    <td>${info.precoprod}</td>
                                     <td>${info.descricao}</td>
                                   </tr>`);                    
     };
 
     function abreModal(opt) {
       if (opt === 1){
-        $("#ModalCentralizado").modal({
-          show: true
-        })
+        $("#ModalCentralizado").modal(
+          {
+          show: true          
+          }
+        );        
       }
       else{
         $("#ModalCentralizado2").modal({
@@ -285,11 +287,6 @@
             $("#inputDescricao").val(colunas[6].innerText);
         });
       }
-
-
-      
-      
-
     </script>
 </body>
 </html>

@@ -60,7 +60,7 @@
             <div class="col-sm-12">
               <input type="button" class="btn btn-success" id="btnInsert" value="Inserir" onclick="insertdata()" />
               <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar" onclick="updatedata()" />
-              <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir" onclick="cleardata()">
+              <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
               <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Dados" onclick="cleardata()">
             </div>           
           </form>            
@@ -189,7 +189,7 @@
                                     <td>${info.precoprod}</td>
                                     <td>${info.descricao}</td>
                                   </tr>`);                    
-    };
+    };   
 
     function abreModal(opt) {
       if (opt === 1){
@@ -305,6 +305,31 @@
         db.data[index].descricao = contato.descricao        
 
         displayMessage("Contato alterado com sucesso");
+
+        // Atualiza os dados no Local Storage
+        localStorage.setItem('db_contato', JSON.stringify(db));
+    };
+
+    $("#btnDelete").click(function () {
+        let campoId = $("#inputId").val();
+        if (campoId == "") {
+            alert("Selecione um contato a ser excluído.");
+            return;
+        }
+        deleteContato(parseInt(campoId));
+
+        // Reexibe os contatos
+        // exibeContatos();
+
+        // Limpa o formulario
+        $("#form-contato")[0].reset();
+    });
+
+    function deleteContato(id) {    
+        // Filtra o array removendo o elemento com o id passado
+        db.dados = db.dados.filter(function (element) { return element.id != id });
+
+        alert("Contato removido com sucesso");
 
         // Atualiza os dados no Local Storage
         localStorage.setItem('db_contato', JSON.stringify(db));

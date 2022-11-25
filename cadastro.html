@@ -177,6 +177,7 @@
     <script src="mock_database.js"></script>
     <script>
 
+    function exibeContatos(){
     var prods = '';
     for (let i=0; i < db.dados.length; i++){
       let info = db.dados[i];
@@ -188,7 +189,7 @@
                                     <td>${info.nomeprod}</td>
                                     <td>${info.precoprod}</td>
                                     <td>${info.descricao}</td>
-                                  </tr>`);                    
+                                  </tr>`)}
     };   
 
     function abreModal(opt) {
@@ -279,6 +280,7 @@
       };
 
       function init(){
+        exibeContatos();
         $("#grid-contatos").on("click", "tr", function (e) {
             let linhaContato = this;
             colunas = linhaContato.querySelectorAll("td");
@@ -304,7 +306,7 @@
         db.data[index].precoprod = contato.precoprod,
         db.data[index].descricao = contato.descricao        
 
-        displayMessage("Contato alterado com sucesso");
+        alert("Contato alterado com sucesso");
 
         // Atualiza os dados no Local Storage
         localStorage.setItem('db_contato', JSON.stringify(db));
@@ -319,7 +321,7 @@
         deleteContato(parseInt(campoId));
 
         // Reexibe os contatos
-        // exibeContatos();
+        exibeContatos();
 
         // Limpa o formulario
         $("#form-contato")[0].reset();

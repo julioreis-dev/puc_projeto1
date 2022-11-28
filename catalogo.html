@@ -115,7 +115,7 @@
   
   
   <!-- The Modal -->
-<div class="modal" id="myModal">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -129,31 +129,27 @@
       <div class="modal-body">
         <form id="form-contato">
           <div class="form-group">              
-              <label for="inputId">Id</label>
-              <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>              
-          </div>
+            <label for="inputId">Id</label>
+            <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>              
+          </div>          
           <div class="form-group">
-            <label for="exampleFormControlInput1">Nome</label>
+            <label for="exampleFormControlInput1">Nome do vendedor</label>
             <input type="text" class="form-control" id="inputNome" disabled>
-          </div>
+          </div>          
           <div class="form-group">
-              <label for="exampleFormControlInput2">Sobrenome</label>
-              <input type="text" class="form-control" id="inputSobrenome" disabled>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput3">Email</label>
+            <label for="exampleFormControlInput3">Email do vendedor</label>
             <input type="email" class="form-control" id="inputEmail" disabled>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlInput4">Nome do Produto</label>
+            <label for="exampleFormControlInput4">Produto</label>
             <input type="text" class="form-control" id="inputNomeprod" disabled>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlInput5">Preço do Produto</label>
+            <label for="exampleFormControlInput5">Preço</label>
             <input type="text" class="form-control" id="inputPrecoprod" disabled>
           </div>
           <div class="form-group">
-            <label for="exampleFormControlTextarea6">Descrição do Produto:</label>
+            <label for="exampleFormControlTextarea6">Descrição:</label>
             <textarea class="form-control" id="inputDescricao" rows="7" disabled></textarea>
           </div>                     
         </form>
@@ -161,7 +157,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Comprar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" id="btnDelete">Comprar</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
@@ -239,7 +235,32 @@
           show: true          
           }
         )  
-    });                                     
+    });
+    
+    $("#btnDelete").click(function () {
+        let campoId = $("#inputId").val();
+        if (campoId == "") {
+            alert("Selecione um contato a ser excluído.");
+            return;
+        }
+        deleteContato(parseInt(campoId));
+
+        // Reexibe os contatos
+        // exibeContatos();
+
+        // Limpa o formulario
+        $("#form-contato")[0].reset();
+    });
+
+    function deleteContato(id) {    
+        // Filtra o array removendo o elemento com o id passado
+        db.dados = db.dados.filter(function (element) { return element.id != id });
+
+        alert("Compra realizada com sucesso!!!");
+
+        // Atualiza os dados no Local Storage
+        localStorage.setItem('db_contato', JSON.stringify(db));
+    }
 
   </script>
   

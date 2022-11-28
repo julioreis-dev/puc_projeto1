@@ -287,25 +287,8 @@
             $("#inputNomeprod").val(colunas[4].innerText);
             $("#inputPrecoprod").val(colunas[5].innerText);
             $("#inputDescricao").val(colunas[6].innerText);
-        });
-      
-    //   function updateContato(id, contato) {
-    //     // Localiza o indice do objeto a ser alterado no array a partir do seu ID
-    //     let index = db.data.map(obj => obj.id).indexOf(id);
-
-    //     // Altera os dados do objeto no array
-    //     db.data[index].nome = contato.nome,
-    //     db.data[index].sobrenome = contato.sobrenome,
-    //     db.data[index].email = contato.email,
-    //     db.data[index].nomeprod = contato.nomeprod,
-    //     db.data[index].precoprod = contato.precoprod,
-    //     db.data[index].descricao = contato.descricao        
-
-    //     alert("Contato alterado com sucesso");
-
-    //     // Atualiza os dados no Local Storage
-    //     localStorage.setItem('db_contato', JSON.stringify(db));
-    // };
+        });      
+    
 
     $("#btnDelete").click(function () {
         let campoId = $("#inputId").val();

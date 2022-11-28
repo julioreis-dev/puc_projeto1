@@ -58,7 +58,7 @@
               <textarea class="form-control" id="inputDescricao" rows="7"></textarea>
             </div>
             <div class="col-sm-12">
-              <input type="button" class="btn btn-success" id="btnInsert" value="Inserir" onclick="insertdata()" />
+              <input type="button" class="btn btn-success" id="btnInsert" value="Inserir" onclick="insertdata()" />              
               <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar" onclick="updatedata()" />
               <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
               <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Dados" onclick="cleardata()">
@@ -206,9 +206,7 @@
         })
       };
     }
-
-      function insertdata(){
-        console.log($("#form-contato")[0].checkValidity())
+    function insertdata(){       
         let novoid = Math.floor(Math.random() * 9999);
         console.log(novoid)       
         if ($("#form-contato")[0].checkValidity()){                              
@@ -234,18 +232,15 @@
           localStorage.setItem('db_contato', JSON.stringify(db));
           console.log(db.dados);
           $("#form-contato")[0].reset();
-          abreModal(2);
-          // alert("Produto cadastrado corretamente!!!");
+          abreModal(2);          
         }
         else{
           console.log(novoid)
-          abreModal(1);
-          // setTimeout(abreModal, 1000);
-
-          // alert("Por favor, preencha todos os campos do formulário corretamente!!!");
+          abreModal(1);          
         }
           return;
       };
+    
 
       function cleardata(){
         $("#form-contato")[0].reset();
@@ -294,23 +289,23 @@
             $("#inputDescricao").val(colunas[6].innerText);
         });
       
-      function updateContato(id, contato) {
-        // Localiza o indice do objeto a ser alterado no array a partir do seu ID
-        let index = db.data.map(obj => obj.id).indexOf(id);
+    //   function updateContato(id, contato) {
+    //     // Localiza o indice do objeto a ser alterado no array a partir do seu ID
+    //     let index = db.data.map(obj => obj.id).indexOf(id);
 
-        // Altera os dados do objeto no array
-        db.data[index].nome = contato.nome,
-        db.data[index].sobrenome = contato.sobrenome,
-        db.data[index].email = contato.email,
-        db.data[index].nomeprod = contato.nomeprod,
-        db.data[index].precoprod = contato.precoprod,
-        db.data[index].descricao = contato.descricao        
+    //     // Altera os dados do objeto no array
+    //     db.data[index].nome = contato.nome,
+    //     db.data[index].sobrenome = contato.sobrenome,
+    //     db.data[index].email = contato.email,
+    //     db.data[index].nomeprod = contato.nomeprod,
+    //     db.data[index].precoprod = contato.precoprod,
+    //     db.data[index].descricao = contato.descricao        
 
-        alert("Contato alterado com sucesso");
+    //     alert("Contato alterado com sucesso");
 
-        // Atualiza os dados no Local Storage
-        localStorage.setItem('db_contato', JSON.stringify(db));
-    };
+    //     // Atualiza os dados no Local Storage
+    //     localStorage.setItem('db_contato', JSON.stringify(db));
+    // };
 
     $("#btnDelete").click(function () {
         let campoId = $("#inputId").val();

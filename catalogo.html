@@ -90,7 +90,7 @@
                           <th scope="col">Sobrenome</th>
                           <th scope="col">Email</th>
                           <th scope="col">Produto</th>
-                          <th scope="col">Preço</th>
+                          <th scope="col">Preço (R$)</th>
                           <th scope="col">Descrição</th>
                       </tr>
                   </thead>
@@ -129,8 +129,8 @@
       <div class="modal-body">
         <form id="form-contato">
           <div class="form-group">              
-            <label for="inputId">Id</label>
-            <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>              
+            <!-- <label for="inputId">Id</label> -->
+            <input type="hidden" class="form-control" id="inputId" placeholder="ID" disabled>              
           </div>          
           <div class="form-group">
             <label for="exampleFormControlInput1">Nome do vendedor</label>
@@ -215,7 +215,7 @@
                                                 <td>${info.sobrenome}</td>
                                                 <td>${info.email}</td>
                                                 <td>${info.nomeprod}</td>
-                                                <td>R$ ${info.precoprod}</td>
+                                                <td>${info.precoprod}</td>
                                                 <td>${info.descricao}</td>
                                             </tr>`)};
       

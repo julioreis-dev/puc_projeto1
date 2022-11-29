@@ -28,10 +28,10 @@
         <!-- block content -->
         
         <!-- first carousel -->
-        <form id="form-contato">
+        <!-- <form id="form-contato">
             <div class="form-group">              
                 <label for="inputId">Id</label>
-                <input type="text" class="form-control" id="inputId" placeholder="ID" disabled>              
+                <input type="hidden" class="form-control" id="inputId" placeholder="ID" disabled>              
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1">Nome *</label>
@@ -63,13 +63,14 @@
               <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
               <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Dados" onclick="cleardata()">
             </div>           
-          </form>            
+          </form>             -->
     </div>
     
     <div class="container">
       <div class="row p-4 justify-content-center">
         <h1>Produtos Cadastrados</h1>
-      </div>      
+      </div> 
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Cadastrar Produto</button>     
       <div class="row d-flex justify-content-center">
         <div id="lista-produtos">
         <div class="row">
@@ -94,6 +95,60 @@
               </table>
           </div>
         </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Modal form -->
+    <div class="modal fade bd-example-modal-lg" id="Modalform" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Cadastrar Produto</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <form id="form-contato">
+          <div class="form-group">              
+              <!-- <label for="inputId">Id</label> -->
+              <input type="hidden" class="form-control" id="inputId" placeholder="ID" disabled>              
+          </div>
+          <div class="form-group p-2">
+            <label for="exampleFormControlInput1">Nome *</label>
+            <input type="text" class="form-control" id="inputNome" required placeholder="Digite aqui seu nome">
+          </div>
+          <div class="form-group p-2">
+              <label for="exampleFormControlInput2">Sobrenome *</label>
+              <input type="text" class="form-control" id="inputSobrenome" required placeholder="Digite aqui seu sobrenome">
+          </div>
+          <div class="form-group p-2">
+            <label for="exampleFormControlInput3">Email *</label>
+            <input type="email" class="form-control" id="inputEmail" required placeholder="Informe o seu telefone">
+          </div>
+          <div class="form-group p-2">
+            <label for="exampleFormControlInput4">Nome do Produto *</label>
+            <input type="text" class="form-control" id="inputNomeprod" required placeholder="Digite aqui o nome do produto">
+          </div>
+          <div class="form-group p-2">
+            <label for="exampleFormControlInput5">Preço do Produto *</label>
+            <input type="text" class="form-control" id="inputPrecoprod" required placeholder="Especifique o preço que deseja vender o produto">
+          </div>
+          <div class="form-group p-2">
+            <label for="exampleFormControlTextarea6">Descrição do Produto:</label>
+            <textarea class="form-control" id="inputDescricao" rows="7"></textarea>
+          </div>
+
+          
+            <div class="col-sm-12 p-2">
+              <input type="button" class="btn btn-success" id="btnInsert" value="Inserir" onclick="insertdata()" />              
+              <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar" onclick="updatedata()" />
+              <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
+              <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar Dados" onclick="cleardata()">
+            </div>
+                   
+        </form>
       </div>
       </div>
     </div>
@@ -142,7 +197,6 @@
 
 
     <!-- endblock content -->
-
     <footer>
         <div class="row d-flex justify-content-center">
             <div class="col-sm-2">
@@ -287,6 +341,12 @@
             $("#inputNomeprod").val(colunas[4].innerText);
             $("#inputPrecoprod").val(colunas[5].innerText);
             $("#inputDescricao").val(colunas[6].innerText);
+            $("#Modalform").modal(
+            {
+            show: true          
+            }
+          )
+            // 
         });      
     
 

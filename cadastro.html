@@ -27,10 +27,10 @@
       <a href="catalogo.html" class="col-sm-2 offset-1 text-secondary" role="button">Catálogo</a>
       <a href="/team.html" class="col-sm-2  offset-1 text-secondary" role="button">Quem Somos</a>
     </div>
-    <hr>    
+    <hr>
   </div>
 
-<!-- block content -->
+  <!-- block content -->
   <div class="container">
     <div class="row p-4 justify-content-center">
       <h1>Produtos Cadastrados</h1>
@@ -250,7 +250,8 @@
       <div>
         <br>
         <small class="text-secondary">Copyright &copy;
-          <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a>PUC-MINAS / SISTEMA DE INFORMAÇÃO / GRUPO 3</a>
+          <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a>PUC-MINAS / SISTEMA
+            DE INFORMAÇÃO / GRUPO 3</a>
         </small class="text-secondary">
       </div>
     </div>
@@ -327,11 +328,14 @@
         console.log(db.dados);
         $("#form-contato")[0].reset();
         abreModal(2);
+
       }
       else {
         console.log(novoid)
         abreModal(1);
       }
+      $("#Modalform").modal('hide');
+      exibeContatos();
       return;
     };
 
@@ -360,6 +364,8 @@
       };
 
       updateContato(parseInt(campoId), contato);
+      $("#Modalform1").modal('hide');
+      exibeContatos();
     };
 
     function init() {
@@ -389,7 +395,7 @@
 
 
       $("#btnDelete").click(function () {
-        let campoId = $("#inputId").val();
+        let campoId = $("#inputId1").val();
         if (campoId == "") {
           alert("Selecione um contato a ser excluído.");
           return;

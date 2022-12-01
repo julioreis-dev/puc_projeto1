@@ -74,151 +74,154 @@
     </div>
   </div>    -->
 
-  <div class="container">
-    <div class="row p-4 justify-content-center">
-      <!-- <h1>Produtos</h1> -->
-    </div>
-    <div class="row d-flex justify-content-center">
-      <div id="lista-produtos">
-        <div class="row">
-          <div class="col-sm-12">
+    <div class="container">
+      <div class="row p-4 justify-content-center">
+        <!-- <h1>Produtos</h1> -->
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div id="lista-produtos">
+          <div class="row">
+            <div class="col-sm-12">
               <table id="grid-contatos" class="table table-hover">
-                  <thead>
-                      <tr>
-                          <th scope="col">ID</th>
-                          <th scope="col">Nome</th>
-                          <th scope="col">Sobrenome</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Produto</th>
-                          <th scope="col">Preço (R$)</th>
-                          <th scope="col">Descrição</th>
-                      </tr>
-                  </thead>
-                  <tbody id="table-contatos">
-                      <tr>
-                          <!-- <td scope="row">1</td>
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sobrenome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Preço (R$)</th>
+                    <th scope="col">Descrição</th>
+                  </tr>
+                </thead>
+                <tbody id="table-contatos">
+                  <tr>
+                    <!-- <td scope="row">1</td>
                           <td></td>
                           <td></td>
                           <td></td>
                           <td></td>
                           <td></td>
                           <td></td> -->
-                      </tr>
-                  </tbody>
+                  </tr>
+                </tbody>
               </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Deseja finalizar compra</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form id="form-contato">
+              <div class="form-group">
+                <!-- <label for="inputId">Id</label> -->
+                <input type="hidden" class="form-control" id="inputId" placeholder="ID" disabled>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Nome do vendedor</label>
+                <input type="text" class="form-control" id="inputNome" disabled>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput3">Email do vendedor</label>
+                <input type="email" class="form-control" id="inputEmail" disabled>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput4">Produto</label>
+                <input type="text" class="form-control" id="inputNomeprod" disabled>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput5">Preço</label>
+                <input type="text" class="form-control" id="inputPrecoprod" disabled>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea6">Descrição:</label>
+                <textarea class="form-control" id="inputDescricao" rows="7" disabled></textarea>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal" id="btnDelete">Comprar</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
           </div>
         </div>
-        
       </div>
     </div>
-  </div> 
-  
-  
-  <!-- The Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Deseja finalizar compra</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-        <form id="form-contato">
-          <div class="form-group">              
-            <!-- <label for="inputId">Id</label> -->
-            <input type="hidden" class="form-control" id="inputId" placeholder="ID" disabled>              
-          </div>          
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Nome do vendedor</label>
-            <input type="text" class="form-control" id="inputNome" disabled>
-          </div>          
-          <div class="form-group">
-            <label for="exampleFormControlInput3">Email do vendedor</label>
-            <input type="email" class="form-control" id="inputEmail" disabled>
+    <!-- endblock content -->
+
+    <footer>
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-2">
+          <a href=""><img src="./img/facebook.png" alt="facebook"></a>
+          <a href=""><img src="./img/twitter.png" alt="twiter"></a>
+          <a href=""><img src="./img/github.png" alt="github"></a>
+        </div>
+        <div class="col-sm-6 offset-0">
+          <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, vitae!</small>
+          <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, temporibus!</small>
+        </div>
+        <div class="col-sm-2">
+          <div>
+            <a class="link-light small text-secondary" href="#!">Privacy</a>
+            <span class="text-white mx-1">&middot;</span>
+            <a class="link-light small text-secondary" href="#!">Terms</a>
+            <span class="text-white mx-1">&middot;</span>
+            <a class="link-light small text-secondary" href="#!">Contact</a>
           </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput4">Produto</label>
-            <input type="text" class="form-control" id="inputNomeprod" disabled>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput5">Preço</label>
-            <input type="text" class="form-control" id="inputPrecoprod" disabled>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea6">Descrição:</label>
-            <textarea class="form-control" id="inputDescricao" rows="7" disabled></textarea>
-          </div>                     
-        </form>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal" id="btnDelete">Comprar</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <!-- endblock content -->
-
-  <footer>
-    <div class="row d-flex justify-content-center">
-      <div class="col-sm-2">
-        <a href=""><img src="./img/facebook.png" alt="facebook"></a>
-        <a href=""><img src="./img/twitter.png" alt="twiter"></a>
-        <a href=""><img src="./img/github.png" alt="github"></a>
-      </div>
-      <div class="col-sm-6 offset-0">
-        <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, vitae!</small>
-        <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, temporibus!</small>
-      </div>
-      <div class="col-sm-2">
+        </div>
         <div>
-          <a class="link-light small text-secondary" href="#!">Privacy</a>
-          <span class="text-white mx-1">&middot;</span>
-          <a class="link-light small text-secondary" href="#!">Terms</a>
-          <span class="text-white mx-1">&middot;</span>
-          <a class="link-light small text-secondary" href="#!">Contact</a>
+          <br>
+          <small class="text-secondary">Copyright &copy;
+            <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a
+              href="https://github.com/julioreis-dev/puc_projeto1">GRUPO 3</a>
+          </small class="text-secondary">
         </div>
       </div>
-      <div>
-        <br>
-        <small class="text-secondary">Copyright &copy;
-          <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a href="https://github.com/julioreis-dev/puc_projeto1">GRUPO 3</a>
-        </small class="text-secondary">
-      </div>
-    </div>
-  </footer> 
+    </footer>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  
-  <script>
-    var prods = '';
-    for (let i=0; i < db.dados.length; i++){ 
-      let info = db.dados[i];
-      $("#table-contatos").append(`<tr><td scope="row">${info.id}</td>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+
+    <script>
+      var prods = '';
+      for (let i = 0; i < db.dados.length; i++) {
+        let info = db.dados[i];
+        $("#table-contatos").append(`<tr><td scope="row">${info.id}</td>
                                                 <td>${info.nome}</td>
                                                 <td>${info.sobrenome}</td>
                                                 <td>${info.email}</td>
                                                 <td>${info.nomeprod}</td>
                                                 <td>${info.precoprod}</td>
                                                 <td>${info.descricao}</td>
-                                            </tr>`)};
-      
+                                            </tr>`)
+      };
+
       $("#grid-contatos").on("click", "tr", function (e) {
         let linhaContato = this;
         colunas = linhaContato.querySelectorAll("td");
@@ -232,16 +235,16 @@
         $("#inputDescricao").val(colunas[6].innerText);
         $("#myModal").modal(
           {
-          show: true                    
+            show: true
           }
-        )  
-    });
-    
-    $("#btnDelete").click(function () {
+        )
+      });
+
+      $("#btnDelete").click(function () {
         let campoId = $("#inputId").val();
         if (campoId == "") {
-            alert("Selecione um contato a ser excluído.");
-            return;
+          alert("Selecione um contato a ser excluído.");
+          return;
         }
         deleteContato(parseInt(campoId));
 
@@ -250,9 +253,9 @@
 
         // Limpa o formulario
         $("#form-contato")[0].reset();
-    });
+      });
 
-    function deleteContato(id) {    
+      function deleteContato(id) {
         // Filtra o array removendo o elemento com o id passado
         db.dados = db.dados.filter(function (element) { return element.id != id });
 
@@ -260,10 +263,10 @@
 
         // Atualiza os dados no Local Storage
         localStorage.setItem('db_contato', JSON.stringify(db));
-    }
+      }
 
-  </script>  
-  
+    </script>
+
 </body>
 
 </html>

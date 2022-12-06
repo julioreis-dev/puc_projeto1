@@ -9,7 +9,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <script src="mock_database.js"></script>
+  <script src="./model/mock_database.js"></script>
+  <!-- <script src="mock.json"></script> -->
+  <script src="./controlers/modals.js"></script>
+  <script src="./controlers/controlers_contact.js"></script>
+  <script src="./controlers/create_contact.js"></script>
+  <script src="./controlers/read_contact.js"></script>
+  <script src="./controlers/update_contact.js"></script>
+  <script src="./controlers/delete_contact.js"></script>
   <title>BabyLogo-Catalogo</title>
 </head>
 
@@ -31,48 +38,6 @@
     <div class="row p-4 justify-content-center">
       <h1>CATÁLOGO DE PRODUTOS</h1>
     </div>
-    <!-- <div class="row d-flex justify-content-center">      
-      <div class="col-sm-3 p-5">
-        <img src="./img/blusa_1.png" alt="logo">
-        <h4>
-          SOU UM PRODUTO
-        </h4>
-        <h4>
-          R$ 10,99
-        </h4>
-      </div>
-
-      <div class="col-sm-3 p-5">
-        <img src="./img/blusa_2.png" alt="logo">
-        <h4>
-          SOU UM PRODUTO
-        </h4>
-        <h4>
-          R$ 11,99
-        </h4>
-      </div>
-
-      <div class="col-sm-3 p-5">
-        <img src="./img/blusa_3.png" alt="logo">
-        <h4>
-          SOU UM PRODUTO
-        </h4>
-        <h4>
-          R$ 12,99
-        </h4>
-      </div>
-
-      <div class="col-sm-3 p-5">
-        <img src="./img/blusa_4.png" alt="logo">
-        <h4>
-          SOU UM PRODUTO
-        </h4>
-        <h4>
-          R$ 13,99
-        </h4>
-      </div>
-    </div>
-  </div>    -->
 
     <div class="container">
       <div class="row p-4 justify-content-center">
@@ -96,13 +61,7 @@
                 </thead>
                 <tbody id="table-contatos">
                   <tr>
-                    <!-- <td scope="row">1</td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td> -->
+
                   </tr>
                 </tbody>
               </table>
@@ -122,7 +81,7 @@
 
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title">Deseja finalizar compra</h4>
+            <h4 class="modal-title">Dados de compra</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
 
@@ -192,7 +151,8 @@
       <div>
         <br>
         <small class="text-secondary">Copyright &copy;
-          <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a>PUC-MINAS / SISTEMA DE INFORMAÇÃO / GRUPO 3</a>
+          <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by <a>PUC-MINAS / SISTEMA
+            DE INFORMAÇÃO / GRUPO 3</a>
         </small class="text-secondary">
       </div>
     </div>
@@ -209,6 +169,7 @@
     crossorigin="anonymous"></script>
 
   <script>
+
     var prods = '';
     for (let i = 0; i < db.dados.length; i++) {
       let info = db.dados[i];
@@ -249,21 +210,12 @@
       deleteContato(parseInt(campoId));
 
       // Reexibe os contatos
-      // exibeContatos();
+      exibeContatos();
 
       // Limpa o formulario
       $("#form-contato")[0].reset();
     });
 
-    function deleteContato(id) {
-      // Filtra o array removendo o elemento com o id passado
-      db.dados = db.dados.filter(function (element) { return element.id != id });
-
-      alert("Compra realizada com sucesso!!!");
-
-      // Atualiza os dados no Local Storage
-      localStorage.setItem('db_contato', JSON.stringify(db));
-    }
 
   </script>
 

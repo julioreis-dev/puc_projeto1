@@ -2,7 +2,7 @@ body{
     /* background-color: rgb(212, 218, 219);  */
     background-size: cover;   
     font-family: 'Lucida Sans', Arial, sans-serif;
-    background-image: url(./img/cinza.jpg); 
+    background-image: url(../img/cinza.jpg); 
     background-repeat: no-repeat;
     
 }

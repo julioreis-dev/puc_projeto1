@@ -182,48 +182,6 @@
     </div>
   </div>
 
-  <!-- Modal1 -->
-  <div class="modal fade" id="ModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="TituloModalCentralizado">Atenção</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Por favor, preencha todos os campos do formulário corretamente!!!
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal2 -->
-  <div class="modal fade" id="ModalCentralizado2" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="TituloModalCentralizado">Atenção</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Produto cadastrado corretamente!!!
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- endblock content -->
 
   <footer>
@@ -264,10 +222,9 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
-  <script src="mock_database.js"></script>
-  <script>    
+    crossorigin="anonymous"></script>  
+  <!-- <script src="mock_database.js"></script> -->
+  <script>
 
     function init() {
       exibeContatos();
@@ -282,12 +239,7 @@
         $("#inputNomeprod1").val(colunas[4].innerText);
         $("#inputPrecoprod1").val(colunas[5].innerText);
         $("#inputDescricao1").val(colunas[6].innerText);
-        $("#Modalform1").modal(
-          {
-            show: true
-          }
-        )
-
+        $("#Modalform1").modal('show')
       });
 
       $("#btnDelete").click(function () {
@@ -296,15 +248,15 @@
           alert("Selecione um contato a ser excluído.");
           return;
         }
-        deleteContato(parseInt(campoId));
+        deleteContato(parseInt(campoId), 1);
 
         // Reexibe os contatos
         exibeContatos();
 
         // Limpa o formulario
         $("#form-contato")[0].reset();
+        $("#Modalform1").modal('hide');
       });
-
     }
   </script>
 </body>

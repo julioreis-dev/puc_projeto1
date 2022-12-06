@@ -39,6 +39,6 @@ function updateContato(id, contato){
     db.dados[index].precoprod = contato.precoprod,
     db.dados[index].descricao = contato.descricao,
 
-    alert('Dados alterados com sucesso');
+    alert('Dados alterados com sucesso!!!');
     localStorage.setItem('db_contato', JSON.stringify(db));
 }

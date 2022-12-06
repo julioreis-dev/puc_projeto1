@@ -116,7 +116,7 @@
           </div>
 
           <!-- Modal footer -->
-          <div class="modal-footer">
+          <div class="modal-footer">            
             <button type="button" class="btn btn-success" data-dismiss="modal" id="btnDelete">Comprar</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
           </div>
@@ -194,11 +194,7 @@
       $("#inputNomeprod").val(colunas[4].innerText);
       $("#inputPrecoprod").val(colunas[5].innerText);
       $("#inputDescricao").val(colunas[6].innerText);
-      $("#myModal").modal(
-        {
-          show: true
-        }
-      )
+      $("#myModal").modal('show')
     });
 
     $("#btnDelete").click(function () {
@@ -207,7 +203,9 @@
         alert("Selecione um contato a ser excluído.");
         return;
       }
-      deleteContato(parseInt(campoId));
+      deleteContato(parseInt(campoId), 2);
+
+      // abreModal();
 
       // Reexibe os contatos
       exibeContatos();

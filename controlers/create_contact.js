@@ -24,14 +24,13 @@ function insertdata() {
       localStorage.setItem('db_contato', JSON.stringify(db));
       console.log(db.dados);
       $("#form-contato")[0].reset();
-      abreModal(2);
-
+      alert('Produto cadastrado com sucesso!!!');
+      $("#Modalform").modal('hide');
     }
     else {
-      console.log(novoid)
-      abreModal(1);
-    }
-    $("#Modalform").modal('hide');
+      // console.log(novoid)
+      alert('Por favor, preencha todos os campos do formulário corretamente!!!');
+    }    
     exibeContatos();
     return;
   };

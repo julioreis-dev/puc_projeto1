@@ -1,14 +1,8 @@
 function abreModal(opt) {
     if (opt === 1) {
-      $("#ModalCentralizado").modal(
-        {
-          show: true
-        }
-      );
+      $("#ModalCentralizado").modal('show');
     }
     else {
-      $("#ModalCentralizado2").modal({
-        show: true
-      })
+      $("#ModalCentralizado2").modal('show')
     };
   }
